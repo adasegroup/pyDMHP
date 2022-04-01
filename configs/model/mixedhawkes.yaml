@@ -1,0 +1,12 @@
+_target_: src.networks.MixedHP
+
+num_type: 1
+num_cluster: 1
+num_sequence: 1
+mu_dict_modelname: "NaiveExogenousIntensity"
+mu_dict_activation: "identity"
+alpha_dict_modelname: "NaiveEndogenousIntensity"
+alpha_dict_activation: "identity"
+kernel_dict_modelname: "GateKernel"
+activation: "identity"
+use_cuda: True

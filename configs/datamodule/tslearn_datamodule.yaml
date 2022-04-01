@@ -1,0 +1,11 @@
+_target_: src.datamodules.ts_datamodule.TslearnDataModule
+
+data_dir: ${data_dir}
+data_config_yaml: ${data_config_file}
+maxsize: null
+maxlen: 100
+ext: "csv"
+time_col: "time"
+event_col: "event"
+batch_size: 128
+num_workers: 4

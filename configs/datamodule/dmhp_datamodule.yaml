@@ -1,0 +1,14 @@
+_target_: src.datamodules.dhmp_datamodule.DMHPDataModule
+
+data_dir: ${data_dir}
+data_config_yaml: ${data_config_file}
+maxsize: 20000
+maxlen: 100
+train_val_split: 0.8
+ext: "csv"
+time_col: "time"
+event_col: "event"
+datetime: False
+batch_size: 32
+num_workers: 8
+memorysize: 3 # how many historical events remembered by each event

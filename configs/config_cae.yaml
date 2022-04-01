@@ -1,0 +1,34 @@
+seed: 42
+exp_name: default
+defaults:
+    - _self_
+    - datamodule: cae_datamodule.yaml
+    - trainer: default.yaml
+    - model: conv1d_autoencoder.yaml
+    - callbacks: default.yaml  
+    - experiment: null
+    - logger: cohortney_logger.yaml
+
+
+n_runs: 5
+num_epochs: 25
+work_dir: ${hydra:runtime.cwd}
+data_config_file: ${work_dir}/src/datamodules/datasets_urls.yaml
+data_name: exp_K3_C5
+data_dir: ${work_dir}/data/${data_name}
+save_dir: ${work_dir}/experiments/cae/${data_name}
+
+# use `python run.py debug=true` for easy debugging
+# this will run single train, val and test loop with batch of 1
+# equivalent to running `python run.py trainer.fast_dev_run=true`
+debug: False
+
+# pretty print config at the start of the run using Rich library
+print_config: True
+
+# disable python warnings
+ignore_warnings: True
+
+# check performance on test set, using the best model achieved during training
+# lightning chooses best model based on metric specified in checkpoint callback
+test_after_training: False
